@@ -13,7 +13,7 @@ public class Button  implements ButtonInterfaceAnna{
 	public void update() {
 		
 		
-	}
+	}//
 	@Override
 	public void act() {
 		// TODO Auto-generated method stub
