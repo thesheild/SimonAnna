@@ -11,7 +11,7 @@ public class Progress extends Component implements ProgressInterfaceAnna{
 //	public Progress() {
 //		// TODO Auto-generated constructor stub
 //	}
-
+//
 	public Progress(int x, int y, int w, int h) {
 		super(x, y, w, h);
 		

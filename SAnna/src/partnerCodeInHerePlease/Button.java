@@ -1,4 +1,4 @@
-package PartnerCodeInHerePlease;
+package partnerCodeInHerePlease;
 
 import java.awt.image.BufferedImage;
 

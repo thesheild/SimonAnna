@@ -1,7 +1,7 @@
 package partnerCodeInHerePlease;
 import SimonAnna.ButtonInterfaceAnna;
 import SimonAnna.MoveInterfaceAnna;
-
+//
 public class Move implements MoveInterfaceAnna{
 	private ButtonInterfaceAnna x;
 	
