@@ -2,7 +2,7 @@ package SimonAnna;
 
 import java.awt.image.BufferedImage;
 
-public class Progress implements ProgressInterfaceAnna {
+public class ProgressAnna implements ProgressInterfaceAnna {
 
 	@Override
 	public BufferedImage getImage() {

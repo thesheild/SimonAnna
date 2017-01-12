@@ -56,13 +56,13 @@ public class SimonScreenAnna extends ClickableScreen implements Runnable {
 			x = (int) (Math.random()*b.length);
 		}
 		lastSelectedButton = x;
-		return new Move(b[x]);
+		return new MoveAnna(b[x]);
 	}
 
 	//Placeholder until partner finishes implementation of ProgressInterface
 	private ProgressInterfaceAnna getProgress() {
 		// TODO Auto-generated method stub
-		return new Progress();
+		return new ProgressAnna();
 	}
 
 	private void addButtons() {

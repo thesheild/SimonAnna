@@ -1,10 +1,10 @@
 package SimonAnna;
 
-public class Move implements MoveInterfaceAnna {
+public class MoveAnna implements MoveInterfaceAnna {
 
 	private ButtonInterfaceAnna b; 
 	
-	public Move(ButtonInterfaceAnna b) {
+	public MoveAnna(ButtonInterfaceAnna b) {
 		this.b = b;
 	}
 
