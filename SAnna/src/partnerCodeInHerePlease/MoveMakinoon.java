@@ -2,15 +2,15 @@ package partnerCodeInHerePlease;
 import SimonAnna.ButtonInterfaceAnna;
 import SimonAnna.MoveInterfaceAnna;
 //
-public class Move implements MoveInterfaceAnna{
+public class MoveMakinoon implements MoveInterfaceAnna{
 	private ButtonInterfaceAnna x;
 	
-	public Move(ButtonInterfaceAnna x) {
+	public MoveMakinoon(ButtonInterfaceAnna x) {
 		this.x = x; 
 		
 	}
 	public ButtonInterfaceAnna getButton(){
-		return x; 
+		return this.x; 
 	}
 
 }
