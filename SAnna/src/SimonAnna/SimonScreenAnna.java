@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gui.ClickableScreen;
+import gui.components.Action;
 import gui.components.TextLabel;
 import gui.components.Visible;
 
@@ -31,8 +32,8 @@ public class SimonScreenAnna extends ClickableScreen implements Runnable {
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		a.setText("");
-	    nextRound();
+//		a.setText("");
+//	    nextRound();
 	}
 
 	@Override
@@ -70,7 +71,59 @@ public class SimonScreenAnna extends ClickableScreen implements Runnable {
 		// TODO Auto-generated method stub
 		int numberOfButtons = 4;
 		Color[] colors = {Color.red, Color.blue, Color.yellow, Color.pink};
-		
+		 b = new ButtonInterfaceAnna[numberOfButtons];
+		 
+			for (int i = 0; i < colors.length; i++){ 
+				b[i] = getButton();
+				final ButtonInterfaceAnna bu = getButton();
+			
+				b[i].setColor(colors[i]);
+				b[i].setX();
+				b[i].setY();
+				b[i].setAction(new Action(){
+
+					public void act(){
+						 if(acceptingInput){
+							 Thread click = new Thread(new Runnable(){
+
+								 public void run(){
+									 bu.highlight(); 
+									 try {
+										Thread.sleep(600);
+									} catch (InterruptedException e) {
+										e.printStackTrace();
+									}
+									 bu.dim();
+									 
+								 }
+
+							});
+							 click.start();
+							 
+							 if(bu == d.get(sequenceIndex).getButton()){
+			                      sequenceIndex++;
+			                  }else{
+			                      gameOver();
+			                      return;
+			                  }
+			                  if(sequenceIndex == d.size()){
+			                      Thread nextRound = new Thread(SimonScreenAnna.this);
+			                      nextRound.start();
+			                  }
+						 }
+					}
+
+					});
+			}
+	}
+
+	private ButtonInterfaceAnna getButton() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public void gameOver() {
+		c.gameOver();
 	}
 
 }
