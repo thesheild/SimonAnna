@@ -95,7 +95,7 @@ public class SimonScreenAnna extends ClickableScreen implements Runnable {
 									}
 									 bu.dim();
 									 
-								 }
+								 } 
 
 							});
 							 click.start();
