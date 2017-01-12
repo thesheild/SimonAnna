@@ -69,4 +69,22 @@ public class ButtonMakinoon extends Component implements ButtonInterfaceAnna {
 		
 	}
 
+	@Override
+	public void setName(String name) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setX() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setY() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

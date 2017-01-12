@@ -8,6 +8,8 @@ import gui.ClickableScreen;
 import gui.components.Action;
 import gui.components.TextLabel;
 import gui.components.Visible;
+import partnerCodeInHerePlease.MoveMakinoon;
+import partnerCodeInHerePlease.ProgressMakinoon;
 
 public class SimonScreenAnna extends ClickableScreen implements Runnable {
 
@@ -58,13 +60,13 @@ public class SimonScreenAnna extends ClickableScreen implements Runnable {
 			x = (int) (Math.random()*b.length);
 		}
 		lastSelectedButton = x;
-		return new MoveAnna(b[x]);
+		return new MoveMakinoon(b[x]);
 	}
 
 	//Placeholder until partner finishes implementation of ProgressInterface
 	private ProgressInterfaceAnna getProgress() {
 		// TODO Auto-generated method stub
-		return new ProgressAnna();
+		return new ProgressMakinoon();
 	}
 
 	private void addButtons() {

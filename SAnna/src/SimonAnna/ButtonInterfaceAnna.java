@@ -6,8 +6,8 @@ import gui.components.Action;
 import gui.components.Clickable;
 
 public interface ButtonInterfaceAnna extends Clickable {
-
 	void setColor(Color color);
+
 
 	void highlight();
 
@@ -20,4 +20,6 @@ public interface ButtonInterfaceAnna extends Clickable {
 	void setX();
 	
 	void setY();
+	
+	
 }

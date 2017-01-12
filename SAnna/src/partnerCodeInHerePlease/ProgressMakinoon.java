@@ -18,7 +18,7 @@ public class ProgressMakinoon extends Component implements ProgressInterfaceAnna
 	//		// TODO Auto-generated constructor stub
 	//	}
 	//
-	public ProgressMakinoon(int x, int y, int w, int h) {
+	public ProgressMakinoon() {
 		super(500, 100, 300, 100);
 		gameOver = false; 
 		
@@ -29,7 +29,6 @@ public class ProgressMakinoon extends Component implements ProgressInterfaceAnna
 		
 	}
 
-	@Override
 	public void setsequenceLength(int length) {
 		this.sequenceLength = length;
 		update();
@@ -40,7 +39,7 @@ public class ProgressMakinoon extends Component implements ProgressInterfaceAnna
 	public void setRound(int round) {
 		this.roundNumber = round;
 		update();
-//	}
+}
 //	public int getHeight() {
 //		// TODO Auto-generated method stub
 //		return 0;
@@ -97,6 +96,12 @@ public class ProgressMakinoon extends Component implements ProgressInterfaceAnna
 			g.drawString("Round: "+roundNumber,5,55);
 			g.drawString("Sequence Length: "+sequenceLength,5,75);
 	}
+	@Override
+	public void setSequenceLength(int size) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 
 
 
