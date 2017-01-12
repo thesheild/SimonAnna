@@ -34,8 +34,15 @@ public class SimonScreenAnna extends ClickableScreen implements Runnable {
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-//		a.setText("");
-//	    nextRound();
+		a.setText("");
+	    nextRound();
+	}
+
+	private void nextRound() {
+		// TODO Auto-generated method stub
+		acceptingInput = false;
+		roundNumber ++;
+		
 	}
 
 	@Override
