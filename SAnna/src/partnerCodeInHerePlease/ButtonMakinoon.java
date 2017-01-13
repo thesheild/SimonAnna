@@ -1,6 +1,7 @@
 package partnerCodeInHerePlease;
 
 import java.awt.Color;
+
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
@@ -10,63 +11,66 @@ import gui.components.Action;
 import gui.components.Component;
 
 public class ButtonMakinoon extends Component implements ButtonInterfaceAnna {
+	private Color color;
+	private Color currentColor;
+	private boolean highlight;
 	private Action action;
-	private Color c;
-	private boolean highlighted;
+	private static int width = 50;
+	private static int height = 50;
 	
-	public ButtonMakinoon(int x, int y) {
-		super(x,y,50,50);
+	public ButtonMakinoon() {
+		super(0, 0, 50,50);
 	}
 
 	@Override
-	public boolean isHovered(int x, int y) {
-		// TODO Auto-generated method stub
-		return ((x>this.getX() && x<(this.getX()+this.getWidth())) 
-				&& (y>this.getY() && y<(this.getY()+this.getHeight())));
+	public void setColor(Color color) {
+		this.color = color;
+		update();
+	}
+
+	@Override
+	public void highlight() {
+		highlight = true;
+		currentColor = color;
+		update();
+	}
+
+	@Override
+	public void dim() {
+		currentColor = Color.lightGray;
+		highlight = false;
+		update();
 	}
 
 	@Override
 	public void act() {
-		this.action.act(); 
+		action.act();
+	}
 
-	}
-	public void setAction(Action a){ 
-		this.action = a; 
-	}
-	public void setColor(Color c){ 
-		this.c = c; 
+	@Override
+	public boolean isHovered(int x, int y) {
 		
-	}
-	public void dim(){ 
-		highlighted = false; 
-		update(); 
-	}
-	
-	public void highlight(){ 
-		highlighted = true; 
-		update();
-	}
-	public void update() {
-		// TODO Auto-generated method stub
-
+		return (x>this.getX() && x<(this.getX()+this.getWidth())) && (y>this.getY() && y<(this.getY()+this.getHeight()));
 	}
 
-	
+	@Override
 	public void update(Graphics2D g) {
-		g = clear(); 
-		
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-		if(highlighted) 
-		{
-			g.setColor(this.c);
+		if(currentColor != null){
+			g.setColor(currentColor);
 		}
-			else{
-				g.setColor(Color.GRAY);
-			}
-		g.fillOval(0, 0, 50, 50);
-		g.setColor(Color.BLACK);
-		g.drawOval(0, 0, 50, 50);
+		else{
+			g.setColor(Color.lightGray);
+		}
+		g.fillOval(0, 0, width, height);
+		g.setColor(Color.black);
+		g.drawOval(0, 0, width, height);
 		
+	}
+
+	@Override
+	public void setAction(Action action) {
+		this.action = action;
 	}
 
 	@Override
@@ -86,5 +90,4 @@ public class ButtonMakinoon extends Component implements ButtonInterfaceAnna {
 		// TODO Auto-generated method stub
 		
 	}
-
 }

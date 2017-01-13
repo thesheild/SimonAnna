@@ -19,7 +19,7 @@ public class ProgressMakinoon extends Component implements ProgressInterfaceAnna
 	//	}
 	//
 	public ProgressMakinoon() {
-		super(500, 100, 300, 100);
+		super(250, 40, 150, 80);
 		gameOver = false; 
 		
 	}
@@ -29,7 +29,7 @@ public class ProgressMakinoon extends Component implements ProgressInterfaceAnna
 		
 	}
 
-	public void setsequenceLength(int length) {
+	public void setSequenceLength(int length) {
 		this.sequenceLength = length;
 		update();
 		
@@ -40,68 +40,29 @@ public class ProgressMakinoon extends Component implements ProgressInterfaceAnna
 		this.roundNumber = round;
 		update();
 }
-//	public int getHeight() {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
-//
-//	@Override
-//	public BufferedImage getImage() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public int getWidth() {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
-//
-//	@Override
-//	public int getX() {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
-//
-//	@Override
-//	public int getY() {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
-//
-//	@Override
-//	public boolean isAnimated() {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
 
 	@Override
 	public void update(Graphics2D g) {
 			g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 			g.setFont(new Font("Calibri",Font.PLAIN,16));
+			
 			if(gameOver){
 				g.setColor(Color.red);
-				g.fillRoundRect(0, 0, 198, 98, 20, 20);
+				g.fillRect(0, 0, 200,100);
 				g.setColor(Color.black);
-				g.drawRoundRect(0,0,198,98,20,20);	
+				g.drawRect(0,0, 200, 100);	
 				g.drawString("Game Over!",5,35);
 				
 			}
 			else{
 				g.setColor(Color.gray);
-				g.fillRoundRect(0, 0, 198, 98, 20, 20);
+				g.fillRect(0, 0,200, 100);
 				g.setColor(Color.black);
-				g.drawRoundRect(0,0,198,98,20,20);	
+				g.drawRect(0,0,200, 100 );	
 			}
-			g.drawString("Round: "+roundNumber,5,55);
-			g.drawString("Sequence Length: "+sequenceLength,5,75);
-	}
-	@Override
-	public void setSequenceLength(int size) {
-		// TODO Auto-generated method stub
-		
-	}
-	
+			g.drawString("Round #: "+roundNumber,5,20);
+			g.drawString("Sequence Length: "+sequenceLength,5,40);
+	} 
 
 
 

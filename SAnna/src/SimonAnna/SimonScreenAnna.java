@@ -8,6 +8,7 @@ import gui.ClickableScreen;
 import gui.components.Action;
 import gui.components.TextLabel;
 import gui.components.Visible;
+import partnerCodeInHerePlease.ButtonMakinoon;
 import partnerCodeInHerePlease.MoveMakinoon;
 import partnerCodeInHerePlease.ProgressMakinoon;
 
@@ -128,7 +129,7 @@ public class SimonScreenAnna extends ClickableScreen implements Runnable {
 
 	private ButtonInterfaceAnna getButton() {
 		// TODO Auto-generated method stub
-		return null;
+		return new ButtonMakinoon();
 	}
 	
 	public void gameOver() {
