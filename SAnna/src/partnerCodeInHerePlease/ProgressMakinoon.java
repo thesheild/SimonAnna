@@ -21,7 +21,7 @@ public class ProgressMakinoon extends Component implements ProgressInterfaceAnna
 	public ProgressMakinoon() {
 		super(250, 40, 150, 80);
 		gameOver = false; 
-		
+		//
 	}
 	public void gameOver() {
 		gameOver = true;

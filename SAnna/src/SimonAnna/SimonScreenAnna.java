@@ -13,7 +13,7 @@ import partnerCodeInHerePlease.MoveMakinoon;
 import partnerCodeInHerePlease.ProgressMakinoon;
 
 public class SimonScreenAnna extends ClickableScreen implements Runnable {
-
+//
 	private TextLabel a;
 	private ButtonInterfaceAnna[] b;
 	private ProgressInterfaceAnna c;

@@ -66,7 +66,7 @@ public class ButtonMakinoon extends Component implements ButtonInterfaceAnna {
 		g.setColor(Color.black);
 		g.drawOval(0, 0, width, height);
 		
-	}
+	}//
 
 	@Override
 	public void setAction(Action action) {
