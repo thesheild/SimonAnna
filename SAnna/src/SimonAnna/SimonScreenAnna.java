@@ -13,7 +13,7 @@ import partnerCodeInHerePlease.MoveMakinoon;
 import partnerCodeInHerePlease.ProgressMakinoon;
 
 public class SimonScreenAnna extends ClickableScreen implements Runnable {
-//
+
 	private TextLabel a;
 	private ButtonInterfaceAnna[] b;
 	private ProgressInterfaceAnna c;
@@ -26,7 +26,6 @@ public class SimonScreenAnna extends ClickableScreen implements Runnable {
 	
 	public SimonScreenAnna(int width, int height) {
 		super(width, height);
-//		super(); maybe??
 		Thread app = new Thread(this);
 		app.start();
 
@@ -43,7 +42,45 @@ public class SimonScreenAnna extends ClickableScreen implements Runnable {
 		// TODO Auto-generated method stub
 		acceptingInput = false;
 		roundNumber ++;
+		c.setRound(roundNumber);
+		d.add(randomMove());
+		c.setSequenceLength(d.size());
+		changeText("Simon's turn");
+		a.setText("");
+		playSequence();
+		changeText("Your turn");
+		a.setText("");
+		acceptingInput = true;
+		sequenceIndex = 0;
 		
+	}
+
+	private void playSequence() {
+		// TODO Auto-generated method stub
+		ButtonInterfaceAnna b = null;
+		for(MoveInterfaceAnna m: d){
+			if(b!=null){
+				b.dim();
+			}
+			b = m.getButton();
+			b.highlight();
+			try {
+				Thread.sleep((long)(2000*(2.0/(roundNumber+2))));
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		b.dim();
+	}
+
+	private void changeText(String string) {
+		// TODO Auto-generated method stub
+		try{
+			a.setText(string);
+			Thread.sleep(1000);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -58,6 +95,9 @@ public class SimonScreenAnna extends ClickableScreen implements Runnable {
 		d.add(randomMove());
 		d.add(randomMove());
 		roundNumber = 0;
+		for(int i = 0; i< b.length; i++){
+			viewObjects.add(b[i]);
+		}
 		viewObjects.add(c);
 		viewObjects.add(a);
 	}
@@ -76,6 +116,11 @@ public class SimonScreenAnna extends ClickableScreen implements Runnable {
 		// TODO Auto-generated method stub
 		return new ProgressMakinoon();
 	}
+	
+	private ButtonInterfaceAnna getButton() {
+		// TODO Auto-generated method stub
+		return new ButtonMakinoon();
+	}
 
 	private void addButtons() {
 		// TODO Auto-generated method stub
@@ -84,15 +129,16 @@ public class SimonScreenAnna extends ClickableScreen implements Runnable {
 		 b = new ButtonInterfaceAnna[numberOfButtons];
 		 
 			for (int i = 0; i < colors.length; i++){ 
-				b[i] = getButton();
 				final ButtonInterfaceAnna bu = getButton();
+				b[i] = bu;
 			
-				b[i].setColor(colors[i]);
-				b[i].setX();
-				b[i].setY();
-				b[i].setAction(new Action(){
+				bu.setColor(colors[i]);
+				bu.setX();
+				bu.setY();
+				bu.setAction(new Action(){
 
 					public void act(){
+						System.out.println("clicked");
 						 if(acceptingInput){
 							 Thread click = new Thread(new Runnable(){
 
@@ -127,10 +173,7 @@ public class SimonScreenAnna extends ClickableScreen implements Runnable {
 			}
 	}
 
-	private ButtonInterfaceAnna getButton() {
-		// TODO Auto-generated method stub
-		return new ButtonMakinoon();
-	}
+	
 	
 	public void gameOver() {
 		c.gameOver();

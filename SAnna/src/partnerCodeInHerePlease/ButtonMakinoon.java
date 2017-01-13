@@ -2,6 +2,7 @@ package partnerCodeInHerePlease;
 
 import java.awt.Color;
 
+
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
@@ -17,9 +18,11 @@ public class ButtonMakinoon extends Component implements ButtonInterfaceAnna {
 	private Action action;
 	private static int width = 50;
 	private static int height = 50;
+	private static int count;
 	
 	public ButtonMakinoon() {
-		super(0, 0, 50,50);
+		super(5+ 55*count, 300, 50,50);
+		count++;
 	}
 
 	@Override
@@ -90,4 +93,6 @@ public class ButtonMakinoon extends Component implements ButtonInterfaceAnna {
 		// TODO Auto-generated method stub
 		
 	}
+
+
 }
